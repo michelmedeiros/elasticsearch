@@ -1,4 +1,4 @@
-package br.com.elasticsearch;
+package br.com.elasticsearch.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

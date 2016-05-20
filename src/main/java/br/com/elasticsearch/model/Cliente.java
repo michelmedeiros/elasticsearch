@@ -5,9 +5,11 @@ import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Cliente implements Serializable {
 
@@ -19,7 +21,4 @@ public class Cliente implements Serializable {
 
 	private String email;
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
 }

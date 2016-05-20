@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.elasticsearch.model.Cliente;
 
 @RestController
+@RequestMapping(value="cliente")
 public class ClienteRestService {
 
 	private static final Logger logger = LogManager.getLogger(ClienteRestService.class);
@@ -71,7 +72,8 @@ public class ClienteRestService {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public void addCliente(@RequestBody Cliente cliente) {
-		logger.warn("Clientes adicionado: " + cliente.getNome());
+		logger.warn("O cliente " + cliente.getId() + " foi adicionado!");
+		logger.warn("Nome: " + cliente.getNome());
 		clientes.put(cliente.getId(), cliente);
 	}
 
@@ -82,6 +84,7 @@ public class ClienteRestService {
 			throw new RuntimeException("Ocorreu um erro caótico");
 		}
 		logger.warn("Clientes atualizado: " + cliente.getNome());
+		logger.info("O cliente " + cliente.getId() + " foi alterado!");
 		Cliente temp = clientes.get(cliente.getId());
 		temp.setNome(cliente.getNome());
 		temp.setEmail(cliente.getEmail());
